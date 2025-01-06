@@ -15,7 +15,7 @@ class Animal:
         return f"{{Name: {self.name}, Health: {self.health}, Hidden: {self.hidden}}}"
 
     def __str__(self) -> str:
-        return str(Animal.alive)
+        return f"Animal({self.name}, Health={self.health}, Hidden={self.hidden})"
 
 
 class Herbivore(Animal):
@@ -28,4 +28,4 @@ class Carnivore(Animal):
         if isinstance(herbivore, Herbivore) and not herbivore.hidden:
             herbivore.health -= 50
             if herbivore.health <= 0:
-                herbivore.die()  # Видаляємо травоїдну, якщо її здоров'я <= 0
+                herbivore.die()
